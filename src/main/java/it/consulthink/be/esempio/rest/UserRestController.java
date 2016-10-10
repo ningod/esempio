@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import it.consulthink.be.esempio.model.User;
+import it.consulthink.be.esempio.service.ServiceException;
 import it.consulthink.be.esempio.service.UserService;
 
 /**
@@ -25,8 +26,12 @@ import it.consulthink.be.esempio.service.UserService;
  */
 @RestController
 @Scope(proxyMode = ScopedProxyMode.TARGET_CLASS, value = "singleton")
-public class UserRestController {
+public class UserRestController implements it.consulthink.be.esempio.rest.RestController<User> {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Autowired
 	UserService service;
 
@@ -48,6 +53,19 @@ public class UserRestController {
 		}
 
 		return response;
+	}
+
+	@Override
+	public ResponseEntity<User> find(HttpServletRequest request, Long id) throws ServiceException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ResponseEntity<List<User>> search(HttpServletRequest request, FiltersAndOrders search)
+			throws ServiceException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
