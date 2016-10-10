@@ -16,6 +16,9 @@
 	http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
 	">
 
+	<!-- Scan for all of Spring components such as Spring Service -->
+	<context:component-scan base-package="it.consulthink.be.esempio"></context:component-scan>
+
 	<mvc:annotation-driven />
 
 	<!-- Configure to plugin JSON as request and response in method handler -->
