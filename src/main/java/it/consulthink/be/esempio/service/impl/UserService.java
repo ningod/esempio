@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import it.consulthink.be.esempio.dao.DaoException;
 import it.consulthink.be.esempio.dao.UserDao;
@@ -37,6 +38,7 @@ public class UserService implements it.consulthink.be.esempio.service.UserServic
 	 * @see it.consulthink.be.esempio.service.UserService#listUsers()
 	 */
 	@Override
+	@Transactional
 	public List<User> listUsers() throws ServiceException{
 		List<User> result = null;
 		try {

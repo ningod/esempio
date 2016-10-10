@@ -20,10 +20,6 @@ import it.consulthink.be.esempio.model.User;
 import it.consulthink.be.esempio.service.ServiceException;
 import it.consulthink.be.esempio.service.UserService;
 
-/**
- * @author svetrini
- *
- */
 @RestController
 @Scope(proxyMode = ScopedProxyMode.TARGET_CLASS, value = "singleton")
 public class UserRestController implements it.consulthink.be.esempio.rest.RestController<User> {

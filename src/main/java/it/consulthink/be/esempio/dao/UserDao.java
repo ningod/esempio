@@ -58,7 +58,7 @@ public class UserDao implements Serializable{
 	public List<User> listAll() throws DaoException {
 		List<User> result = null;
 		try {
-			Query query = getSession().createQuery("from User ");
+			Query query = getSession().createQuery("from  "+User.class.getName());
 			result = (List<User>) query.list();
 		} catch (Exception e) {
 			throw new DaoException(e);

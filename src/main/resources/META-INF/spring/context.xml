@@ -44,7 +44,7 @@
 
 
 	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
-		<property name="jndiName" value="java:/jdbc/EsempioDS"></property>
+		<property name="jndiName" value="java:comp/env/jdbc/mysql"></property>
 		<property name="lookupOnStartup" value="false"></property>
 		<property name="cache"
 			value="false"></property>
@@ -64,7 +64,7 @@
 	  </property>
       <property name="hibernateProperties">
          <props>
-         	<!-- <prop key="hibernate.hbm2ddl.auto">update</prop>  -->
+         	<prop key="hibernate.hbm2ddl.auto">update</prop>
          	<!-- <prop key="hibernate.default_schema"></prop> -->
             <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
             <prop key="hibernate.show_sql">false</prop>
